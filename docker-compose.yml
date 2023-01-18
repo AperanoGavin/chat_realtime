@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  web_python:
+    build:  .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "800:8000"
+    restart: always
+    volumes:
+      - .:/app
+    links:
+      - db_python
+  db_python:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: python
+      MYSQL_USER: python
+      MYSQL_PASSWORD: python
