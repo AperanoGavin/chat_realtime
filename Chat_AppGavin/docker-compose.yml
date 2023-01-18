@@ -3,7 +3,6 @@ version: '3.1'
 services:
   web_python:
     build:  .
-    command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "800:8000"
     restart: always
