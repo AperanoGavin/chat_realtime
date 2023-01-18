@@ -10,7 +10,7 @@ RUN  apt-get update && apt-get install \
       -y python3-dev \
       -y python3-venv \
       -y python3-wheel \
-      -y ython3-django 
+      -y python3-django 
       
 
 RUN pip install --upgrade pip
@@ -19,7 +19,6 @@ RUN pip install --upgrade wheel
 RUN pip install websocket-client
 RUN pip install django
 RUN pip install requests
-RUN pip install json
 RUN pip install datetime
 RUN pip install channels
 RUN python3 -m pip install -U channels
@@ -37,4 +36,4 @@ COPY . /app
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

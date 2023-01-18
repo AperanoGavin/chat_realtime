@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-=jdoq4fu9pmdcfau%k^k-s!1ehyd50u#ncz)0-&56$3mk9y61u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'gavinaperano.com', 'www.gavinaperano.com', 'localhost', '',
+                 ]
 
 
 # Application definition
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
      # add django channels
     'channels' ,
 ]
-ASGI_APPLICATION = 'ChatApp.asgi.application'
+ASGI_APPLICATION = 'Chat_AppGavin.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
