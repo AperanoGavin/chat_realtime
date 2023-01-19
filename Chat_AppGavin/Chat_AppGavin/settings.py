@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-=jdoq4fu9pmdcfau%k^k-s!1ehyd50u#ncz)0-&56$3mk9y61u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'gavinaperano.com', 'www.gavinaperano.com', 'localhost', '',
+ALLOWED_HOSTS = [ 'http://gavinaperano.com:8000', 'www.gavinaperano.com:8000', 'localhost:8000', 'gavinaperano.com',
+                 'http://gavinaperano.com/'
                  ]
 
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      # add django channels
     'channels' ,
+    'chat',
 ]
 ASGI_APPLICATION = 'Chat_AppGavin.asgi.application'
 

@@ -1,8 +1,8 @@
 from django.urls import path , include
-from chat.consumers import ChatConsumer
+from . import consumer
 
 # Ici, "" est routé vers l'URL ChatConsumer qui
 # gérera la fonctionnalité de chat.
 websocket_urlpatterns = [
-	path("" , ChatConsumer.as_asgi()) ,
+	path('chat/' , consumer.ChatConsumer.as_asgi()) ,
 ]

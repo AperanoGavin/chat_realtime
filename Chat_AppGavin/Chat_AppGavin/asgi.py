@@ -15,19 +15,18 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Chat_AppGavin.settings')
 
 application = get_asgi_application()
 
-ASGI_APPLICATION = 'Chat_AppGavin.asgi.application'
- 
+import chat.routing
+
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter , URLRouter
-from chat import routing
 
 
 application = ProtocolTypeRouter(
     {
-        "http" : get_asgi_application() ,
-        "websocket" : AuthMiddlewareStack(
+        'http' : get_asgi_application() ,
+        'websocket' : AuthMiddlewareStack(
             URLRouter(
-                routing.websocket_urlpatterns
+                chat.routing.websocket_urlpatterns
             )   
         )
     }

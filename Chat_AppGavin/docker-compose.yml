@@ -4,7 +4,7 @@ services:
   web_python:
     build:  .
     ports:
-      - "800:8000"
+      - "8000:8000"
     restart: always
     volumes:
       - .:/app
